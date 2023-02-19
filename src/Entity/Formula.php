@@ -20,6 +20,13 @@ class Formula
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
+    #[ORM\ManyToOne(inversedBy: 'Formula')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Menu $menu = null;
+
+    #[ORM\ManyToOne(inversedBy: 'formula')]
+    private ?Menu $Menu = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +52,18 @@ class Formula
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getMenu(): ?Menu
+    {
+        return $this->menu;
+    }
+
+    public function setMenu(?Menu $menu): self
+    {
+        $this->menu = $menu;
 
         return $this;
     }
