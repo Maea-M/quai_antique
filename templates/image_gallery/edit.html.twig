@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier l'image{% endblock %}
+
+{% block body %}
+    <h1>Modifier une image</h1>
+
+    {{ include('image_gallery/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('app_image_gallery_index') }}">Retourner à la liste des images</a>
+
+    {{ include('image_gallery/_delete_form.html.twig') }}
+{% endblock %}
