@@ -16,6 +16,9 @@ class OpenHour
     #[ORM\Column(length: 255)]
     private ?string $open_time = null;
 
+    #[ORM\Column]
+    private ?bool $active = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -29,6 +32,18 @@ class OpenHour
     public function setOpenTime(string $open_time): self
     {
         $this->open_time = $open_time;
+
+        return $this;
+    }
+
+    public function isActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }
