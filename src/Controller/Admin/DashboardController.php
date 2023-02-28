@@ -2,7 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Booking;
+use App\Entity\Formula;
+use App\Entity\ImageGallery;
 use App\Entity\Meal;
+use App\Entity\Menu;
 use App\Entity\User;
 use App\Entity\OpenHour;
 
@@ -30,10 +34,14 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-dashboard');
-        yield MenuItem::linkToCrud('Meal', 'fa-solid fa-spoon', Meal::class);
-        yield MenuItem::linkToCrud('User', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('OpenHour', 'fa-solid fa-clock', OpenHour::class);
+        yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-dashboard');
+        yield MenuItem::linkToCrud('Plat', 'fa-solid fa-kitchen-set', Meal::class);
+        yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud("Horaires d'ouverture", 'fa-solid fa-clock', OpenHour::class);
+        yield MenuItem::linkToCrud('Menu', 'fa fa-clipboard', Menu::class);
+        yield MenuItem::linkToCrud("Galerie d'images", 'fa-solid fa-image', ImageGallery::class);
+        yield MenuItem::linkToCrud('Formule', 'fa-solid fa-utensils', Formula::class);
+        yield MenuItem::linkToCrud('Réservation', 'fa-solid fa-receipt', Booking::class);
 
     }
 }
