@@ -13,6 +13,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Form\FormInterface;
+use Doctrine\ORM\EntityManagerInterface;
 
 #[Route('/image/gallery')]
 class ImageGalleryController extends AbstractController
@@ -26,24 +27,39 @@ class ImageGalleryController extends AbstractController
     }
 
     #[Route('/new', name: 'app_image_gallery_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, SluggerInterface $slugger, ImageGalleryRepository $imageGalleryRepository): Response
+    public function new(Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
         $imageGallery = new ImageGallery();
         $form = $this->createForm(ImageGalleryType::class, $imageGallery);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $form = $this->manageUpload($form, $imageGallery, $slugger);
+            /** @var UploadedFile $imageFile */
+            $image = $form->get('image')->getData();
+                if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
 
-            $entityManager = $this->getDoctrine()->getManager();
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
+
+                try {
+                    $image->move(
+                        $this->getParameter('upload_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    $this->addFlash('error', '[Upload] : '.$e->getMessage());
+                }
+
+            $imageGallery->setImage($newFilename);
+        }
             $entityManager->persist($imageGallery);
             $entityManager->flush();
-            $imageGalleryRepository->save($imageGallery, true);
-
+            
             return $this->redirectToRoute('app_image_gallery_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('image_gallery/new.html.twig', [
+        return $this->render('image_gallery/new.html.twig', [
             'image_gallery' => $imageGallery,
             'form' => $form,
         ]);
@@ -69,7 +85,7 @@ class ImageGalleryController extends AbstractController
             return $this->redirectToRoute('app_image_gallery_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('image_gallery/edit.html.twig', [
+        return $this->render('image_gallery/edit.html.twig', [
             'image_gallery' => $imageGallery,
             'form' => $form,
         ]);
@@ -83,30 +99,5 @@ class ImageGalleryController extends AbstractController
         }
 
         return $this->redirectToRoute('app_image_gallery_index', [], Response::HTTP_SEE_OTHER);
-    }
-
-    private function manageUpload(FormInterface $form, ImageGallery $imageGallery, SluggerInterface $slugger): FormInterface
-    {
-        /** @var UploadedFile $imageFile */
-        $image = $form->get('image')->getData();
-        if ($image) {
-            $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
-
-            $safeFilename = $slugger->slug($originalFilename);
-            $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
-
-            try {
-                $image->move(
-                    $this->getParameter('upload_directory'),
-                    $newFilename
-                );
-            } catch (FileException $e) {
-                $this->addFlash('error', '[Upload] : '.$e->getMessage());
-            }
-
-            $imageGallery->setImage($newFilename);
-        }
-
-        return $form;
     }
 }
