@@ -17,11 +17,14 @@ class Booking
     #[ORM\Column]
     private ?int $number_guest = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $hour = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $allergy = null;
 
     public function getId(): ?int
     {
@@ -60,6 +63,18 @@ class Booking
     public function setHour(\DateTimeInterface $hour): self
     {
         $this->hour = $hour;
+
+        return $this;
+    }
+
+    public function getAllergy(): ?string
+    {
+        return $this->allergy;
+    }
+
+    public function setAllergy(?string $allergy): self
+    {
+        $this->allergy = $allergy;
 
         return $this;
     }
