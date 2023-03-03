@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\FormulaRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Menu;
 
 #[ORM\Entity(repositoryClass: FormulaRepository::class)]
 class Formula
@@ -21,11 +22,14 @@ class Formula
     private ?string $description = null;
 
     #[ORM\ManyToOne(inversedBy: 'Formula')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Menu $menu = null;
 
     #[ORM\ManyToOne(inversedBy: 'formula')]
     private ?Menu $Menu = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $title = null;
 
     public function getId(): ?int
     {
@@ -64,6 +68,18 @@ class Formula
     public function setMenu(?Menu $menu): self
     {
         $this->menu = $menu;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
 
         return $this;
     }
