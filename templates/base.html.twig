@@ -59,14 +59,16 @@
 						</ul>
 
 						{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            				{% if 'ROLE_ADMIN' in app.user.roles|default('undefined') %}
-								Bienvenue {{ app.user.firstname}}
-								<a href="/admin">Administration</a>
-								<a href="/logout">Se déconnecter</a>
-                			{% endif %}
-							{% else %}							
-								<a href="/login">Se connecter</a>                
+							Bienvenue {{ app.user.firstname}}
+							<a href="/logout">Se déconnecter</a>
+						{% else %}							
+							<a href="/login">Se connecter</a>
+							<a href="/register">Créer un compte</a>               
             			{% endif %}	
+						
+						{% if 'ROLE_ADMIN' in app.user.roles|default('undefined') %}
+							<a href="/admin">Administration</a>
+						{% endif %}	
 					</div>
 				</div>
 			</nav>
