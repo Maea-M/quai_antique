@@ -8,6 +8,7 @@
 
     <h1>Création de compte</h1>
 
+    <div class="container>
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email, {
             label: 'Email'
@@ -35,4 +36,7 @@
 
         <button type="submit" class="btn btn-info mt-2">Créer un compte</button>
     {{ form_end(registrationForm) }}
+    </div>
+
+
 {% endblock %}

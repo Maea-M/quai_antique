@@ -31,8 +31,7 @@ class OpenHour
 
     public function setOpenTime(string $open_time): self
     {
-        $this->open_time = $open_time;
-
+        $this->open_time=$open_time;   
         return $this;
     }
 
