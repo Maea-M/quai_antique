@@ -1,3 +1,17 @@
+/* color 
+primary color : #000000, noir
+secondary color : #c69c6d, lion
+third color : #a54657, redwood
+fourth color : #582630, wine
+fifth color : #EDFFEC, honeydew
+*/
+
 body {
-    background-color: aqua;
+    background-color: #EDFFEC;
 }
+
+footer {
+    background: #582630;
+}
+
+
