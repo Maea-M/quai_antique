@@ -81,19 +81,8 @@
 		<div class="container"> {% block body %}{% endblock %}</div>
 
 	{% block footer %}
-			<div>
-				<p>Ouvert du mardi au dimanche</p>
-					{#--- récupérer les horaires de la bdd ne connait pas les variables
-					-> essayer en créant un controleur
-					->https://symfony.com/doc/current/doctrine.html#fetching-objects-from-the-database
-					https://www.developpez.net/forums/d1930642/php/bibliotheques-frameworks/symfony/recuperer-donnees-bdd/
-					
-					<i class="fa-solid fa-clock"></i>
-					{% for openhour in openhour and isActive %}
-						<p>{{ openhour.open_time }}</p>
-					{% endfor %}
-					---#}
-
+			<div>	
+				{{ render(path('hour')) }}
 			</div>
 
 			<div>
