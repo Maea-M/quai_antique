@@ -9,12 +9,12 @@ use App\Repository\OpenHourRepository;
 
 class OpenHourController extends AbstractController
 {
-    #[Route('/hour', name: 'hour')]
+    #[Route('/openhour', name: 'openhour')]
     public function openhour(OpenHourRepository $OpenHourRepository): Response
     {
         $openhours = $OpenHourRepository ->findBy([], ['id' => 'asc']);
 
-        return $this->render('hour/index.html.twig', [
+        return $this->render('openhour/index.html.twig', [
             'openhours' => $openhours,
         ]);
     }
