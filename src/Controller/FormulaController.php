@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class FormulaController extends AbstractController
 {
-    #[Route('/formula', name: 'app_formula')]
+    #[Route('/formula', name: 'formula')]
     public function index(): Response
     {
         return $this->render('formula/index.html.twig', [
