@@ -3,39 +3,41 @@
 namespace App\Controller;
 
 use App\Entity\Booking;
+use App\Form\BookingFormType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Form\BookingFormType;
 
 
 class BookingController extends AbstractController
 {
     #[Route('/booking', name: 'booking')]
 
-    public function booking(Request $request, EntityManagerInterface $entityManager): Response
+    public function booking(Request $request, EntityManagerInterface $em, ): Response
     {
-        $booking = new Booking();
-        $form = $this->createForm(FormType::class, $booking);
-        $form->handleRequest($request);
+        $booking = new Booking();   
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $booking->setAllergy();
-            $booking->setNumberGuest();
-            $booking->setDate();
-            $booking->setHour();
+        $bookingForm = $this->createForm(BookingFormType::class, $booking);
 
-            $entityManager->persist($booking);
-            $entityManager->flush();
+        $bookingForm->handleRequest($request); 
+        
+        if ($bookingForm ->isSubmitted() && $bookingForm->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($booking);
+            $em->flush();
 
-            return $this->redirectToRoute('home');
+            /* faire une route pour dire que la réservation est ok*/
+            //$booking = $em->getRepository(Booking::class)->findAll();
+            //return $this->render('bookingaccepted/index.html.twig', [
+            //    'bookingaccepted' => $bookingaccepted,   
+            //]);
         }
+    
 
         return $this->render('booking/index.html.twig', [
-            'bookingForm' => $form->createView(),
+            'bookingForm' => $bookingForm->createView()
         ]);
     }
 }

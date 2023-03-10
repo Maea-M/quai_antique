@@ -3,5 +3,19 @@
 {% block title %}Réserver une table{% endblock %}
 
 {% block body %}
+<div>
+    <h1>Réservation</h1>
+
+    {{ form_start(bookingForm) }}
+
+        {{ form_row(bookingForm.number_guest) }}
+        {{ form_row(bookingForm.date) }}
+        {{ form_row(bookingForm.hour) }}
+        {{ form_row(bookingForm.allergy) }} 
+
+        <button type="submit">Réserver une table</button>
+    {{ form_end(bookingForm) }}
+        
+</div>
 
 {% endblock %}

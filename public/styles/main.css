@@ -6,10 +6,27 @@ fourth color : #582630, wine
 fifth color : #EDFFEC, honeydew
 */
 
-body {
-    background-color: #EDFFEC;
+/* Global*/
+a{
+    text-decoration: none;
 }
 
+
+/*specific*/
+.list-nav::after{
+    content: "";
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 0;
+    height: 2px;
+    background: #c69c6d;
+    transition: width 0.2s ease-in-out;
+}
+
+.list-nav:hover:after{
+    width: 2rem;
+}
 footer {
     background: #582630;
 }
