@@ -23,6 +23,10 @@ class BookingController extends AbstractController
 
         $bookingForm->handleRequest($request); 
         
+        // problème avec getDoctrine : revoir replay de C. Chevalier
+        //lors de l'envoi de la requ^te
+        // mettre label en français
+        //nombre d'invités peut être néagtif... mettre une valeur min
         if ($bookingForm ->isSubmitted() && $bookingForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($booking);

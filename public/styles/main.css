@@ -7,7 +7,12 @@ fifth color : #EDFFEC, honeydew
 */
 
 /* Global*/
-a{
+
+body {
+    background-color:#c69c6d;
+}
+
+a {
     text-decoration: none;
 }
 
