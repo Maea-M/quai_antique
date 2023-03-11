@@ -25,7 +25,9 @@ class BookingController extends AbstractController
         //lors de l'envoi de la requ^te
         // mettre label en français
         //nombre d'invités peut être néagtif... mettre une valeur min
+        // mettre une valeur max
         if ($bookingForm ->isSubmitted() && $bookingForm->isValid()) {
+            $booking->getName();
             $booking->getNumberGuest();
             $booking->getDate();
             $booking->getHour();
@@ -34,7 +36,8 @@ class BookingController extends AbstractController
             $entityManager->persist($booking);
             $entityManager->flush();
 
-            /* faire une route pour dire que la réservation est ok*/
+            /* faire une route pour dire que la réservation est ok ou non 
+            ou alors une modale ?*/
             return $this->redirectToRoute('home');
 
         }

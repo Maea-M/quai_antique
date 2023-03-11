@@ -26,6 +26,9 @@ class Booking
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $allergy = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $Name = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Booking
     public function setAllergy(?string $allergy): self
     {
         $this->allergy = $allergy;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->Name;
+    }
+
+    public function setName(string $Name): self
+    {
+        $this->Name = $Name;
 
         return $this;
     }
