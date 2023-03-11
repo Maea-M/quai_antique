@@ -21,3 +21,38 @@ Pour le front :
 Pour la gestion de la base de données:
 - Heidisql
 
+## Vérifier les pré-requis
+Symfony CLI intègre une commande permettant de vérifier que votre ordinateur a les pré-requis nécessaires pour exécuter une application Symfony.
+
+Dans le terminal de commande, copier-coller cette instruction:
+
+`symfony check:requirements`
+
+## Cloner l'application
+Dans le terminal de commande, copier-coller cette instruction
+
+`git clone quai_antique`
+
+Une fois le projet cloné, sur le terminal, saisir la commande suivante:
+`cd quai_antique`
+`code .`
+pour ouvrir avec VS Code
+
+## Vérifier l'environnement de développement
+Copier-coller les demandes ci-dessous
+`composer install`
+`npm install`
+
+Pour lancer le serveur de Symfony
+`symfony server:start`
+Ouvrez votre navigateur et accédez à la page : http://localhost:8000 
+
+## Créer la base de données
+Dans le terminal de VS code, vous pouvez saisir la commande suivante:
+`php bin/console doctrine:database:create`
+
+puis migrer le projet avec la commande suivante:
+`php bin/console doctrine:migrations:migrate`
+
+## Lancer l'interface pour la base de données
+Lancer Heidisql ou un système similaire
