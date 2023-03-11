@@ -15,12 +15,10 @@ class BookingController extends AbstractController
 {
     #[Route('/booking', name: 'booking')]
 
-    public function booking(Request $request, EntityManagerInterface $em, ): Response
+    public function booking(Request $request, EntityManagerInterface $entityManager ): Response
     {
         $booking = new Booking();   
-
         $bookingForm = $this->createForm(BookingFormType::class, $booking);
-
         $bookingForm->handleRequest($request); 
         
         // problème avec getDoctrine : revoir replay de C. Chevalier
@@ -28,15 +26,17 @@ class BookingController extends AbstractController
         // mettre label en français
         //nombre d'invités peut être néagtif... mettre une valeur min
         if ($bookingForm ->isSubmitted() && $bookingForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($booking);
-            $em->flush();
+            $booking->getNumberGuest();
+            $booking->getDate();
+            $booking->getHour();
+            $booking->getAllergy();
+
+            $entityManager->persist($booking);
+            $entityManager->flush();
 
             /* faire une route pour dire que la réservation est ok*/
-            //$booking = $em->getRepository(Booking::class)->findAll();
-            //return $this->render('bookingaccepted/index.html.twig', [
-            //    'bookingaccepted' => $bookingaccepted,   
-            //]);
+            return $this->redirectToRoute('home');
+
         }
     
 
