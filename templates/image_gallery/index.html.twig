@@ -3,10 +3,28 @@
 {% block title %}Notre Gallerie d'images{% endblock %}
 
 {% block body %}
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-   
+{# <div>
+{{ <pre>
+	{{ dump() }}
+</pre>}}
 </div>
+#}
+{#<div>
+{% for imageGallery in imageGalleries %}
+	{{ imageGallery.title }}
+{% endfor %}
+"}
+{#
+</div>
+<div class="card" style="width: 18rem;">
+    <img src={{ asset('uploads/' ~ imageGallery) }} class="card-img-top" alt={{imagegallery.title}}>
+	<div class="card-body">
+		{% if imageGallery.title  %}
+			<h5 class="card-title">{{ imageGallery.title }}</h5>
+		{% endif %}
+		
+		<p class="card-text">{{ imageGallery.content }}</p>
+	</div>
+</div>
+#}
 {% endblock %}
