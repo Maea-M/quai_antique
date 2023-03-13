@@ -16,7 +16,7 @@ class ImageGalleryController extends AbstractController
 
     public function index(ImageGalleryRepository $imageGalleryRepository): Response
     {
-        $imageGalleries = $imageGalleryRepository->findAll();
+        $imageGallery = $imageGalleryRepository->findAll();
         return $this->render('image_gallery/index.html.twig', [
         ]);
     }
