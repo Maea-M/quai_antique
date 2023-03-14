@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre carte{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center m-5">Nos formules</h1>
+    <div>
+        {% for formulaitem in formula %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ formulaitem.title | raw }}</h5>
+                    <p class="card-text">{{ formulaitem.description | raw }}</p>
+                </div>
+                <div class="card-footer">{{ formulaitem.price | raw }}€</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

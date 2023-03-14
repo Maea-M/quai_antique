@@ -5,6 +5,14 @@
 {% block body %}
 <h1 class="text-center m-5">Nos menus</h1>
 
-
-
+    <div>
+        {% for menuitem in menu %}
+            <table>
+                <tbody>
+                    <tr>
+                        <td>{{ menuitem.title }}</td>
+                    </tr>
+            </table>
+        {% endfor %}
+    </div>
 {% endblock %}
