@@ -1,7 +1,7 @@
 /*Sélectionner les éléments*/
 const eye = document.querySelector(".fa-eye");
 const eyeoff = document.querySelector(".fa-eye-slash");
-const passwordField = document.getElementById("#password");
+const passwordField = document.querySelector("#password");
 
 /*faire un addEventListenner, astuce changer le type assword en type text*/
 eye.addEventListener("click", () => {
