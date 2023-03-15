@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Quai Antique|Accueil{% endblock %}
 
 {% block body %}
 <h1 class="text-center m-5"> Découvrez notre restaurant</h1>
@@ -18,4 +18,41 @@
         </div>
     </div>
 </section>
+
+<section>
+    <h2>La carte change au rythme des produits de saisons</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</section>
+
+<section>
+    <h2>Découvrez la carte de notre restaurant</h2>
+    <div class="row">
+        <div class="col-6">
+            <img width="75%" src="images/prosecco.jpg" alt="verre de vin">
+        </div>
+        <div class="col-6">
+            <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum publishing including versions of Lorem Ipsum.</p>
+            <a href="{{ path('menu')}}">
+                <div class="btn btn-info">Notre carte</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Réserver une table</h2>
+
+    <div class="row">
+        <div class="col-6">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <a href="{{ path('booking')}}">
+                <div class="btn btn-info">Réserver une table</div>
+            </a>
+        </div>
+        <div class="col-6">
+            <img width="75%" src="images/salle.jpg" alt="salle de restaurant">
+        </div>
+    </div>
+</section>
+
 {% endblock %}
