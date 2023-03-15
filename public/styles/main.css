@@ -21,7 +21,7 @@ a:hover {
     color: #c69c6d;
 }
 
-/*specific*/
+/*specific navbar*/
 .list-nav::after{
     content: "";
     display: block;
@@ -36,11 +36,18 @@ a:hover {
 .list-nav:hover:after{
     width: 2rem;
 }
+
 footer {
     background: #582630;
 }
 
+/* button */
 .btn-info {
     background-color:  #582630;
     color: white;
+}
+
+/* card */
+.card-footer {
+    background-color: #EDFFEC;
 }
