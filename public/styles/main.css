@@ -51,3 +51,46 @@ footer {
 .card-footer {
     background-color: #EDFFEC;
 }
+
+/*eye */
+
+label {
+    position: relative;
+}
+
+label input {
+    font-size: 1em;
+    color: white;
+    background: transparent;
+    padding: 1rem 1.2rem;
+    width: 350px;
+    border-radius: 5px;
+    border: 2px solid #582630;
+    transition: all 0.2s;
+}
+
+label input:focus {
+    border-color: #a54657;
+}
+
+label .password-icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 20px;
+    color: white;
+    transition: all 0.2s;
+}
+
+label .password-icon:hover {
+    cursor: pointer;
+    color: #a54657;
+}
+
+label .password-icon .fa-eye-slash {
+    display: none;
+}
+
