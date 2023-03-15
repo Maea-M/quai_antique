@@ -40,4 +40,7 @@ footer {
     background: #582630;
 }
 
-
+.btn-info {
+    background-color:  #582630;
+    color: white;
+}
