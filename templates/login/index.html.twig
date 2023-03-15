@@ -1,8 +1,13 @@
 {# templates/login/index.html.twig #}
 
 {% extends 'base.html.twig' %}
+{% block javascripts %}
+    <script src="{{ asset('scripts/functioneye.js') }}"></script>
+{% endblock %}
+
 
 {% block body %}
+
     <h1 class="text-center m-5">Se connecter</h1>
 
     {% if error %}
@@ -10,15 +15,24 @@
     {% endif %}
 
     <form action="{{ path('login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}">
+        <label>
+            <input type="text" placeholder="Votre email" id="username" name="_username" value="{{ last_username }}">
+        </label>
 
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="_password">
+        <label>
+            <input type="password" id="password" name="_password" placeholder="votre mot de passe">
+
+            <div class="password-icon">
+                <i class="fa-regular fa-eye" id="eye"></i>
+                <i class="fa-regular fa-eye-slash" id="eyeslash"></i>
+            </div>
+        </label>
+            
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
         <input type="hidden" name="_target_path" value="{{ path('home') }}"/>
 
         <button type="submit" class="btn btn-info mt-2">Se connecter</button>
     </form>
+
 {% endblock %}
