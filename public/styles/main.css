@@ -44,7 +44,11 @@ footer {
 /* button */
 .btn-info {
     background-color:  #582630;
+    border: #582630;
     color: white;
+}
+.btn-info:hover{
+    background-color: #c69c6d;
 }
 
 /* card */
