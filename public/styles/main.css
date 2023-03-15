@@ -7,7 +7,6 @@ fifth color : #EDFFEC, honeydew
 */
 
 /* Global*/
-
 a {
     text-decoration: none;
     color :#582630
@@ -40,14 +39,52 @@ footer {
 /* button */
 .btn-info {
     background-color:  #582630;
-    border: #582630;
     color: white;
-}
-.btn-info:hover{
-    background-color: #c69c6d;
 }
 
 /* card */
 .card-footer {
     background-color: #EDFFEC;
+}
+
+/*eye */
+
+label {
+    position: relative;
+}
+
+label input {
+    font-size: 1em;
+    color: black;
+    background: transparent;
+    padding: 1rem 1.2rem;
+    width: 350px;
+    border-radius: 5px;
+    border: 2px solid #582630;
+    transition: all 0.2s;
+}
+
+label input:focus {
+    border-color: #a54657;
+}
+
+label .password-icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 20px;
+    color: black;
+    transition: all 0.2s;
+}
+
+label .password-icon:hover {
+    cursor: pointer;
+    color: #a54657;
+}
+
+label .password-icon .fa-eye-slash {
+    display: none;
 }
