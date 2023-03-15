@@ -16,8 +16,9 @@ class ImageGalleryController extends AbstractController
 
     public function index(ImageGalleryRepository $imageGalleryRepository): Response
     {
-        $imageGallery = $imageGalleryRepository->findAll();
+        $image = $imageGalleryRepository->findBy([], ['id' => 'asc']);
         return $this->render('image_gallery/index.html.twig', [
+            'image'=> $image,
         ]);
     }
 }

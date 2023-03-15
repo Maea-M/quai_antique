@@ -3,15 +3,19 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<h1> hello</h1>
+<h1 class="text-center m-5"> Découvrez notre restaurant</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/maeam/Projets IT/quai_antique/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/maeam/Projets IT/quai_antique/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+<section class="container text-center">
+    <div class="row">
+        <div class="col">
+            <p>Entrez dans la nouvelle adresse « bistronomique » de Sibiril où la carte se composent avec les produits locaux et de saison. La plupart de nos fournisseurs sont présents en local, gage de qualité et de fraîcheur; sans oublier de faire la part belle aux desserts élaborés par notre chef Arnaud Michant.
+            Notre salle à l'étage, avec vue sur mer, peut être réserver si vous souhaitez organiser un repas de groupe (jusqu'à 30 personnes); n'hésitez pas à nous contacter.
+            </p>
+        </div>
+        
+        <div class="col">
+            <img width="75%" src="images/bistro.jpg" alt="serveuse">
+        </div>
+    </div>
+</section>
 {% endblock %}
