@@ -17,7 +17,7 @@ a:hover {
 }
 
 /*specific navbar*/
-.list-nav::after{
+nav a .list-nav::after{
     content: "";
     display: block;
     margin: 0 auto;
@@ -28,7 +28,7 @@ a:hover {
     transition: width 0.2s ease-in-out;
 }
 
-.list-nav:hover:after{
+nav a:hover .list-nav:after{
     width: 2rem;
 }
 
@@ -37,9 +37,16 @@ footer {
 }
 
 /* button */
-.btn-info {
-    background-color:  #582630;
-    color: white;
+.btn-info{
+    border: solid 1px #c69c6d;
+    color: #c69c6d;
+    background-color: transparent;
+}
+
+.btn-info:hover {
+    border: solid 1px #582630;
+    color: #582630;
+    background-color: transparent;
 }
 
 /* card */
@@ -51,14 +58,16 @@ footer {
 
 label {
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 label input {
     font-size: 1em;
     color: black;
     background: transparent;
-    padding: 1rem 1.2rem;
-    width: 350px;
+    padding: 0.4rem;
+    width: 60%;
     border-radius: 5px;
     border: 2px solid #582630;
     transition: all 0.2s;
@@ -73,7 +82,7 @@ label .password-icon {
     align-items: center;
     position: absolute;
     top: 50%;
-    right: 20px;
+    left: 55%;
     transform: translateY(-50%);
     width: 20px;
     color: black;
@@ -87,4 +96,25 @@ label .password-icon:hover {
 
 label .password-icon .fa-eye-slash {
     display: none;
+}
+
+/* caroussel*/
+.carousel-caption .carousel_title {
+    display: none;
+}
+
+.carousel-caption:hover .carousel_title {
+    display: inline;
+}
+
+a .btn_booking {
+    position: relative;
+    top: -150px;
+}
+
+a .btn_booking:hover {
+    position: relative;
+    top: -150px;
+    color: white;
+    border: white solid 1px;
 }

@@ -14,25 +14,36 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path('login') }}" method="post">
-        <label>
-            <input type="text" placeholder="Votre email" id="username" name="_username" value="{{ last_username }}">
-        </label>
+<section class="container text-center">
+    <div class="row">
+        <div class="col">
+            <form class="center" action="{{ path('login') }}" method="post">
+                <label class="mt-4">
+                    <input type="text" placeholder="Votre email" id="username" name="_username" value="{{ last_username }}">
+                </label>
 
-        <label>
-            <input type="password" id="password" name="_password" placeholder="votre mot de passe">
+                <label class="mt-4">
+                    <input type="password" id="password" name="_password" placeholder="votre mot de passe">
 
-            <div class="password-icon">
-                <i class="fa-regular fa-eye" id="eye"></i>
-                <i class="fa-regular fa-eye-slash" id="eyeslash"></i>
-            </div>
-        </label>
-            
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <div class="password-icon">
+                        <i class="fa-regular fa-eye" id="eye"></i>
+                        <i class="fa-regular fa-eye-slash" id="eyeslash"></i>
+                    </div>
+                </label>
+                
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-        <input type="hidden" name="_target_path" value="{{ path('home') }}"/>
+                <input type="hidden" name="_target_path" value="{{ path('home') }}"/>
 
-        <button type="submit" class="btn btn-info mt-2">Se connecter</button>
-    </form>
+                <button type="submit" class="btn btn-info mt-4">Se connecter</button>
+            </form>
+        </div>
+
+        <div class="col">
+            <img width="75%" src="images/bar.jpg" alt="vins et sirupeux">
+        </div>
+    </div>
+</section>
+    
 
 {% endblock %}
