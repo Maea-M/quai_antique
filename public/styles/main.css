@@ -3,10 +3,23 @@ primary color : #000000, noir
 secondary color : #c69c6d, lion
 third color : #a54657, redwood
 fourth color : #582630, wine
-fifth color : #EDFFEC, honeydew
+fifth color: white
 */
 
 /* Global*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    width: 94vw;
+    height: 100vh;
+    position: relative;
+}
+
 a {
     text-decoration: none;
     color :#582630
@@ -33,7 +46,10 @@ nav a:hover .list-nav:after{
 }
 
 footer {
-    background: #582630;
+    background: black;
+    width: 100vw;
+    padding: 75px;
+    color:#c69c6d;
 }
 
 /* button */
@@ -51,7 +67,7 @@ footer {
 
 /* card */
 .card-footer {
-    background-color: #EDFFEC;
+    border: solid 1px  #582630;
 }
 
 /*eye */
@@ -118,3 +134,4 @@ a .btn_booking:hover {
     color: white;
     border: white solid 1px;
 }
+

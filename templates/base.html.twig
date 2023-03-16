@@ -33,7 +33,7 @@
     <body>
 	{% block header %}
 		{#--- Barre de navigation---#}
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container-fluid">
 				<a href="/home">
 					<img class="logoqa" width="90px" height="auto" src="images/logoqa.png" alt="logo restaurant quai antique">
@@ -84,23 +84,29 @@
 		<div class="container"> {% block body %}{% endblock %}</div>
 
 	{% block footer %}
-			<div>	
+			{#<div>	
 				{{ render(path('openhour')) }}
 			</div>
+			#}
+	<footer>
+		<div class="mb-5">
+			<i class="fa-solid fa-clock"></i>
+			<p>Ouvert du Mardi au Dimanche de 12h00 à 14h00 puis de 19h00 à 22h00</p>
+		</div>
 
-			<div>
-				<i class="fa-sharp fa-solid fa-location-dot"></i>
-				<p>Quai Antique</p>
-				<p>7 rue de la Savoie</p>
-				<p>29250 Sibiril</p>
-			</div>
+		<div class="mb-5">
+			<i class="fa-sharp fa-solid fa-location-dot"></i>
+			<p>Quai Antique</p>
+			<p>7 rue de la Savoie</p>
+			<p>29250 Sibiril</p>
+		</div>
 
-			<div>
-				<i class="fa-solid fa-phone"></i>
-				<p>+33 234567891</p>
-			</div>
+		<div class="mb-5">
+			<i class="fa-solid fa-phone"></i>
+			<p>+33 234567891</p>
+		</div>
 
-
+	</footer>
 		{% endblock %}
     </body>
 </html>

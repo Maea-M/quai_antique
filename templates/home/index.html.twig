@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<section class="container text-center m-5">
+<section class="container-fluid text-center m-5">
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -87,14 +87,14 @@
     <h2>Réserver une table</h2>
 
     <div class="row m-5">
-        <div class="col-6">
+        <div class="col-sm mt-3">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             <a href="{{ path('booking')}}">
                 <div class="btn btn-info">Réserver une table</div>
             </a>
         </div>
-        <div class="col-6">
-            <img width="75%" src="images/salle.jpg" alt="salle de restaurant">
+        <div class="col-sm mt-3">
+            <img width="100%" src="images/salle.jpg" alt="salle de restaurant">
         </div>
     </div>
 </section>

@@ -14,10 +14,10 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-<section class="container text-center">
+<section class="container">
     <div class="row">
         <div class="col">
-            <form class="center" action="{{ path('login') }}" method="post">
+            <form action="{{ path('login') }}" method="post">
                 <label class="mt-4">
                     <input type="text" placeholder="Votre email" id="username" name="_username" value="{{ last_username }}">
                 </label>
