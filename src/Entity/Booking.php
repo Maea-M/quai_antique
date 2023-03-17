@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\BookingRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BookingRepository::class)]
 class Booking
@@ -14,9 +15,15 @@ class Booking
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\Range(
+        min: 1,
+        max: 15,
+        notInRangeMessage: 'Vous devez au minimum être {{ min }} et {{ max }} au maximum pour la réservation',
+    )]
     #[ORM\Column]
     private ?int $number_guest = null;
 
+    #[Assert\GreaterThan("now", message: "Vous avez choisi une date dans le passé.")]
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
