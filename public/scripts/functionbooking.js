@@ -1,37 +1,31 @@
+console.log('hello world!')
 /*
 1.Mettre des id correspondant aux champs à chercher
 - date
 - heure
 - nombre de couverts
 - bouton d'envoi du formulaire?
+*/
+document.addEventListener('DOMContentLoaded', function() {
+    const dateTime = document.querySelector("#booking_form_date")
+    console.log(dateTime)
+})
 
-2. commencer le tout à 0
 
-3. Faire un appel pour voir le nombre de places dispo
+//2. commencer le tout à 0, mettre un max par exemple 100
+dateTime[0].value = "";
+//3. Faire un appel pour voir le nombre de places disponibles
+setInterval(function () { getNumberGuests(dateTimeInput[0].value); }, 100);
 
-$.ajax({
-    url : '/booking',
-    type: 'POST',
-    data : {'clé': valeur },
-});
-/*Ala 
-var settings = {
-    "url": "http://15.236.148.78/products/all",
-    "method": "GET",
-    "timeout": 0,
-    };
-    
-    $.ajax(settings).done(function (response) {
-    console.log(response);
-    });
+function getNumberGuests(dateTime) {
+    //mettre ajax({
+//    url : '/booking',
+//    type: 'POST',
+//    data : {'dateTime': dateTime },
+//})
+}
 
-    var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-        };
-        
-        fetch("http://15.236.148.78/products/all", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-        */
+/*4. Si pas de créneaux => mettre un message : pas de dispo
+5. Si crénaux dispo, valider la réservation => mettre un message : résa effectuée
+*/
+
