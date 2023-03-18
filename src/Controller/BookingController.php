@@ -38,7 +38,7 @@ class BookingController extends AbstractController
 
             /* faire une route pour dire que la réservation est ok ou non 
             ou alors une modale ?*/
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('bookingvalid');
 
         }
     
