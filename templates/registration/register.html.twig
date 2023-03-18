@@ -8,7 +8,7 @@
 
     <h1 class="text-center m-5">Créér un compte</h1>
 
-    <div class="container>
+    <div class="container">
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email, { label: 'Email'}) }}
         {{ form_row(registrationForm.lastname, { label: 'Nom'}) }}
@@ -18,7 +18,7 @@
             label: 'J\'accepte les conditions générales d\'utilisation'
         }) }}
 
-        <button type="submit" class="btn btn-info mt-2">Créer un compte</button>
+        <button type="submit" class="btn btn-info mt-2 mb-5">Créer un compte</button>
     {{ form_end(registrationForm) }}
     </div>
 

@@ -16,9 +16,9 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-<section class="container">
+<section class="container text-center">
     <div class="row">
-        <div class="col">
+        <div class="col-lg">
             <form action="{{ path('login') }}" method="post">
                 <label class="mt-4">
                     <input type="text" placeholder="Votre email" id="username" name="_username" value="{{ last_username }}">
@@ -37,11 +37,11 @@
 
                 <input type="hidden" name="_target_path" value="{{ path('home') }}"/>
 
-                <button type="submit" class="btn btn-info mt-4">Se connecter</button>
+                <button type="submit" class="btn btn-info mt-4 mb-3">Se connecter</button>
             </form>
         </div>
 
-        <div class="col">
+        <div class="col-lg mb-3">
             <img width="75%" src="images/bar.jpg" alt="vins et sirupeux">
         </div>
     </div>
