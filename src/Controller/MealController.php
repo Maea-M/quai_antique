@@ -5,14 +5,22 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\MealRepository;
 
 class MealController extends AbstractController
 {
     #[Route('/meal', name: 'meal')]
-    public function index(): Response
+    /**
+     * Summary of index
+     * @param MealRepository $mealRepository
+     * @return Response
+     */
+    public function index(MealRepository $mealRepository): Response
     {
+        $meal = $mealRepository ->findBy([], ['id' => 'asc']);
+
         return $this->render('meal/index.html.twig', [
-            'controller_name' => 'MealController',
+            'meal' => $meal,
         ]);
     }
 }
