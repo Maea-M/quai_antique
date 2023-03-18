@@ -31,7 +31,7 @@ Dans le terminal de commande, copier-coller cette instruction:
 ## Cloner l'application
 Dans le terminal de commande, copier-coller cette instruction
 
-`git clone quai_antique`
+`git clone https://github.com/Maea-M/quai_antique.git`
 
 Une fois le projet cloné, sur le terminal, saisir la commande suivante:
 `cd quai_antique`
