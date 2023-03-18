@@ -1,0 +1,14 @@
+{#--- problème propriété inconnue....
+<footer>
+
+    <h3>Nos horaires d'ouverture</h3>
+        <i class="fa-solid fa-clock"></i>
+            {% for openhour in openhours %}
+                <table>
+                    <tr>
+                        <td> {{ openhour.open_time }} </td>
+                    </tr>
+                </table>
+            {% endfor %}
+</footer>
+---#}

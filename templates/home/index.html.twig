@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quai Antique|Accueil{% endblock %}
+
+{% block body %}
+
+<section class=" text-center m-2">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+            <img src="upload/dessert-1678882391.jpg" class="d-block w-100" alt="dessert">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="carousel_title">Salade de fruits</h5>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="images/oeuf.jpg"" class="d-block w-100" alt="entrée">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="carousel_title">Oeuf</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="upload/asperges-1678984603.jpg" class="d-block w-100" alt="Plat">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="carousel_title">Riz accompagné d'asperges</h5>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+    <div>
+        <a href="{{ path('booking')}}">
+            <div class="btn btn_booking btn-info">Réserver une table</div>
+        </a>
+    <div>
+</section>
+
+<section class="text-center m-2">
+    <div class="row m-5">
+        <div class="col-lg">
+            <h1 class="text-center m-2"> Découvrez notre restaurant</h1>
+
+            <p>Entrez dans la nouvelle adresse « bistronomique » de Sibiril où la carte se composent avec les produits locaux et de saison. La plupart de nos fournisseurs sont présents en local, gage de qualité et de fraîcheur; sans oublier de faire la part belle aux desserts élaborés par notre chef Arnaud Michant.
+            Notre salle à l'étage, avec vue sur mer, peut être réserver si vous souhaitez organiser un repas de groupe (jusqu'à 30 personnes); n'hésitez pas à nous contacter.
+            </p>
+        </div>
+        
+        <div class="col-lg">
+            <img width="75%" src="images/bistro.jpg" alt="serveuse">
+        </div>
+    </div>
+</section>
+
+<section class="text-center m-2">
+    <h2 class="mt-5">La carte change au rythme des produits de saisons</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</section>
+
+<section class="text-center m-2">
+    <h2 class="mt-5">Découvrez la carte de notre restaurant</h2>
+    <div class="row m-3">
+        <div class="col-lg">
+            <img class="mb-3" width="75%" src="images/prosecco.jpg" alt="verre de vin">
+        </div>
+        <div class="col-lg">
+            <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum publishing including versions of Lorem Ipsum.</p>
+            <a href="{{ path('menu')}}">
+                <div class="btn btn-info">Notre carte</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="text-center m-2">
+    <h2 class="mt-5">Réserver une table</h2>
+
+    <div class="row m-3">
+        <div class="col-lg mt-3">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <a href="{{ path('booking')}}">
+                <div class="btn btn-info">Réserver une table</div>
+            </a>
+        </div>
+        <div class="col-lg mt-3">
+            <img width="100%" src="images/salle.jpg" alt="salle de restaurant">
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quai Antique|Réserver{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center m-5">Réservation</h1>
+
+    {{ form_start(bookingForm) }}
+
+        {{ form_row(bookingForm.name, { label: 'Nom de la réservation' }) }}
+        {{ form_row(bookingForm.number_guest, { label: 'Nombre d\'invités' }) }}
+        {{ form_row(bookingForm.date, { label: 'Date' }) }}
+        {{ form_row(bookingForm.hour, { label: 'Heure d\'arrivée' }) }}
+        {{ form_row(bookingForm.allergy, {label: 'Précisez si il y a des allergies et lesquelles :' }) }} 
+
+        <button type="submit" class="btn btn-info mt-2 mb-5">Réserver une table</button>   
+    
+    {{ form_end(bookingForm) }}
+
+    
+{% endblock %}

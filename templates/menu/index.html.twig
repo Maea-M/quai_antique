@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quai Antique|Nos menus{% endblock %}
+
+{% block body %}
+<h1 class="text-center m-5">Nos menus</h1>
+
+    <div>
+        {% for menuitem in menu %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ menuitem.title | raw }}</h5>
+                    <p class="card-text">{{ menuitem.description | raw }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
