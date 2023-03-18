@@ -8,6 +8,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MenuRepository::class)]
+/**
+ * Summary of Menu
+ */
 class Menu
 {
     #[ORM\Id]
@@ -17,6 +20,9 @@ class Menu
 
     #[ORM\Column(length: 30)]
     private ?string $title = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $description = null;
 
     #[ORM\OneToMany(mappedBy: 'menu', targetEntity: Formula::class, orphanRemoval: true)]
     private Collection $Formula;
@@ -43,6 +49,17 @@ class Menu
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
