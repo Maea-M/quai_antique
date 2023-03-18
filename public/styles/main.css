@@ -3,10 +3,14 @@ primary color : #000000, noir
 secondary color : #c69c6d, lion
 third color : #a54657, redwood
 fourth color : #582630, wine
-fifth color: white
 */
-
+/* font-family
+    font-family: 'Palanquin', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'League Spartan', sans-serif;
+*/
 /* Global*/
+
 * {
     margin: 0;
     padding: 0;
@@ -18,11 +22,17 @@ body{
     width: 94vw;
     height: 100vh;
     position: relative;
+    font-family: League Spartan, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Bebas Neue, sans-serif;
 }
 
 a {
     text-decoration: none;
-    color :#582630
+    color :#582630;
+    font-family: League Spartan, sans-serif;
 }
 
 a:hover {
@@ -30,19 +40,20 @@ a:hover {
 }
 
 /*specific navbar*/
-nav a .list-nav::after{
+a .nav-link::after{
     content: "";
     display: block;
     margin: 0 auto;
     margin-top: 5px;
-    width: 0;
+    width: 100%;
     height: 2px;
     background: #c69c6d;
+    transform: scale(0);
     transition: width 0.2s ease-in-out;
 }
 
-nav a:hover .list-nav:after{
-    width: 2rem;
+a .nav-link:hover::after{
+    transform: scale(1);
 }
 
 footer {
