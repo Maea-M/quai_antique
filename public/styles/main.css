@@ -48,6 +48,10 @@ footer {
     color:#c69c6d;
 }
 
+footer .mention-link{
+    color:#c69c6d;
+}
+
 /* button */
 .btn-info{
     border: solid 1px #c69c6d;
