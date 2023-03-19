@@ -56,3 +56,6 @@ puis migrer le projet avec la commande suivante:
 
 ## Lancer l'interface pour la base de données
 Lancer Heidisql ou un système similaire
+
+## Site de l'application
+`https://resto-quai-antique.herokuapp.com/`
