@@ -16,8 +16,8 @@
 
 
 -- Listage de la structure de la base pour quai_antique
-CREATE DATABASE IF NOT EXISTS `quai_antique` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `quai_antique`;
+CREATE DATABASE IF NOT EXISTS `oqlt25rhkmnb36ip` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `oqlt25rhkmnb36ip`;
 
 -- Listage de la structure de la table quai_antique. booking
 CREATE TABLE IF NOT EXISTS `booking` (
