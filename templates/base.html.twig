@@ -84,49 +84,46 @@
 			</nav>
 		{% endblock %}
 
-		<div class="container"> {% block body %}{% endblock %}</div>
+		<div> {% block body %}{% endblock %}</div>
 
 	{% block footer %}
 			{#<div>	
 				{{ render(path('openhour')) }}
 			</div>
 			#}
-	<footer class="text-center m-2">
+	<footer class="text-center m-1">
 		<div class="row">
-			<div class="col-lg-6 mt-3">
-				<div class="mb-3">
+			<div class="col-lg-6 mt-2">
+				<div class="mb-2">
 					<i class="fa-solid fa-clock"></i>
 					<p>Ouvert du Mardi au Dimanche de 12h00 à 14h00 puis de 19h00 à 22h00</p>
 				</div>
 
-				<div class="mb-3">
+				<div class="mb-2">
 					<i class="fa-sharp fa-solid fa-location-dot"></i>
 					<p>Quai Antique</p>
 					<p>7 rue de la Savoie</p>
 					<p>29250 Sibiril</p>
 				</div>
 
-				<div class="mb-3">
+				<div class="mb-2">
 					<i class="fa-solid fa-phone"></i>
 					<p>+33 234567891</p>
 				</div>
 
-				<div class="mb-3">
+				<div class="mb-2">
 					<a class ="m-2 mention-link" href="/mention">Mentions légales</a>
 				</div>
 			</div>
-			<div class="col-lg-6 mt-3">
-				<img width="50%" src="images/logoqa.png" alt="logo">
+			<div class="col-lg-6 mt-2">
+				<img width="25%" src="images/logoqa.png" alt="logo">
 			</div>
 		</div>
 
-		<div>
+		<div class="m-2">
 			<p>Morgane Mahé <i class="bi bi-c-circle"></i> Copyright 2023</p>
 		</div>
 		
-
-		
-
 	</footer>
 		{% endblock %}
     </body>

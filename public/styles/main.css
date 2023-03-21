@@ -21,9 +21,7 @@ fifth color: #D3D3D3, light grey
 
 body{
     background-color: white;
-    width: 94vw;
-    height: 100vh;
-    position: relative;
+    max-width: 100%;
     font-family: League Spartan, sans-serif;
 }
 
@@ -125,6 +123,16 @@ label .password-icon .fa-eye-slash {
 }
 
 /* ---------- Carousel ---------- */
+.carousel {
+    max-width: 75%;
+    position: relative;
+    margin: auto;
+}
+
+.carousel-inner .item a img {
+    margin: auto;
+}
+
 .carousel-caption .carousel_title {
     display: none;
 }
@@ -145,3 +153,8 @@ a .btn_booking:hover {
     border: white solid 1px;
 }
 
+/* ---------- Images ---------- */
+.image-size{
+    width: 450px;
+    
+}
