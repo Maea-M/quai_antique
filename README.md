@@ -80,7 +80,7 @@ Entrer votre mot de pass mysql
 
 Saississez :
 `USE + nom de la base de données`
-`USE quai_antique`
+`USE quai_antique` en local
 puis 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `lastname`, `firstname`) VALUES
 et notez les valeurs (!!! attention certains ID sont déjà pris!!!)
