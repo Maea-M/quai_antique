@@ -60,5 +60,30 @@ puis migrer le projet avec la commande suivante:
 ## Lancer l'interface pour la base de données
 Lancer Heidisql ou un système similaire
 
+## Administration
+Pour la partie administration j'ai installé le bundle EasyAdmin avec la commande :
+
+`composer require easycorp/easyadmin-bundle`
+
+Puis j'ai configuré le dashboard avec :
+
+`php bin/console make:admin:dashboard`
+
+j'ai ensuité fait les Crud Controllers avec :
+
+`php bin/console make:admin:crud`
+
+## Pour créér un administrateur
+Dans le terminal, taper
+`mysql -u root -p`
+Entrer votre mot de pass mysql
+
+Saississez :
+`USE + nom de la base de données`
+`USE quai_antique`
+puis 
+INSERT INTO `user` (`id`, `email`, `roles`, `password`, `lastname`, `firstname`) VALUES
+et notez les valeurs (!!! attention certains ID sont déjà pris!!!)
+
 ## Site de l'application
 https://resto-quaiantique.herokuapp.com/
