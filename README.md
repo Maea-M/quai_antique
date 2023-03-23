@@ -87,3 +87,6 @@ et notez les valeurs (!!! attention certains ID sont déjà pris!!!)
 
 ## Site de l'application
 https://resto-quaiantique.herokuapp.com/
+
+## Trello
+https://trello.com/b/P4Xo5q5Y/ecf
