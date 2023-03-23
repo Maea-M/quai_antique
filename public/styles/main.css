@@ -21,8 +21,9 @@ fifth color: #D3D3D3, light grey
 
 body{
     background-color: white;
-    max-width: 100%;
+    max-width: 90%;
     font-family: League Spartan, sans-serif;
+    margin: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,7 +42,6 @@ a:hover {
 
 footer {
     background: black;
-    width: 100vw;
     padding: 75px;
     color:#c69c6d;
 }

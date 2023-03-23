@@ -84,14 +84,14 @@
 			</nav>
 		{% endblock %}
 
-		<div> {% block body %}{% endblock %}</div>
+		<div class="container-fluid"> {% block body %}{% endblock %}</div>
 
 	{% block footer %}
 			{#<div>	
 				{{ render(path('openhour')) }}
 			</div>
 			#}
-	<footer class="text-center m-1">
+	<footer class="text-center">
 		<div class="row">
 			<div class="col-lg-6 mt-2">
 				<div class="mb-2">
@@ -120,9 +120,12 @@
 			</div>
 		</div>
 
-		<div class="m-2">
+		<div class="row">
+			<div class="m-2">
 			<p>Morgane Mahé <i class="bi bi-c-circle"></i> Copyright 2023</p>
+			</div>
 		</div>
+		
 		
 	</footer>
 		{% endblock %}
