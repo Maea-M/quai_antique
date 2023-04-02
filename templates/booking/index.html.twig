@@ -13,6 +13,7 @@
         {{ form_row(bookingForm.date, { label: 'Date' }) }}
         {{ form_row(bookingForm.hour, { label: 'Heure d\'arrivée' }) }}
         {{ form_row(bookingForm.allergy, {label: 'Précisez si il y a des allergies et lesquelles :' }) }} 
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
         <button type="submit" class="btn btn-info mt-2 mb-5">Réserver une table</button>   
     

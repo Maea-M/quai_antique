@@ -17,6 +17,8 @@
         {{ form_row(registrationForm.agreeTerms, {
             label: 'J\'accepte les conditions générales d\'utilisation'
         }) }}
+        
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
         <button type="submit" class="btn btn-info mt-2 mb-5">Créer un compte</button>
     {{ form_end(registrationForm) }}
