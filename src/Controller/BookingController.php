@@ -20,12 +20,7 @@ class BookingController extends AbstractController
         $booking = new Booking();   
         $bookingForm = $this->createForm(BookingFormType::class, $booking);
         $bookingForm->handleRequest($request); 
-        
-        // problème avec getDoctrine : revoir replay de C. Chevalier
-        //lors de l'envoi de la requ^te
-        // mettre label en français
-        //nombre d'invités peut être néagtif... mettre une valeur min
-        // mettre une valeur max
+    
         if ($bookingForm ->isSubmitted() && $bookingForm->isValid()) {
             $booking->getName();
             $booking->getNumberGuest();
@@ -36,8 +31,6 @@ class BookingController extends AbstractController
             $entityManager->persist($booking);
             $entityManager->flush();
 
-            /* faire une route pour dire que la réservation est ok ou non 
-            ou alors une modale ?*/
             return $this->redirectToRoute('bookingvalid');
 
         }
