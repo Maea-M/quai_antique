@@ -19,7 +19,10 @@ class BookingFormType extends AbstractType
         $builder
         // rajouter une ligne pour le nom de la résevation à mapper dans la bdd, voir l'entité
         ->add('name')
-        ->add('number_guest')
+        ->add('number_guest', IntegerType::class, [
+            'attr' => ['min' => 1, 'max' => 15],
+        ]
+        )
         ->add('date')
         ->add('hour',  TimeType::class,  [
             'label' => false, 
