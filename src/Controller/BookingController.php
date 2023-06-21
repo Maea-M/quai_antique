@@ -16,7 +16,7 @@ class BookingController extends AbstractController
 {
     #[Route('/booking', name: 'booking')]
 
-    public function booking(Request $request, EntityManagerInterface $entityManager ): Response
+    public function booking(Request $request, EntityManagerInterface $entityManager, BookingRepository $bookingRepository): Response
     {
         $booking = new Booking();   
         $bookingForm = $this->createForm(BookingFormType::class, $booking);

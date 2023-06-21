@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 class BookingCrudController extends AbstractCrudController
 {
@@ -21,12 +22,17 @@ class BookingCrudController extends AbstractCrudController
     {
         return [
             //IdField::new('id'),
-            TextField::new('name'),
-            IntegerField::new('number_guest'),
+            TextField::new('name', 'nom'),
+            IntegerField::new('number_guest', 'nombre d\'invités'),
             DateField::new('date'),
-            TimeField::new('hour'),
-            TextField::new('allergy')
+            TimeField::new('hour', 'heure'),
+            TextField::new('allergy', 'allergie')
         ];
     }
-    
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['date'=>'ASC', 'hours' => 'ASC']);
+    }
 }
