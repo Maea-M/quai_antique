@@ -33,6 +33,6 @@ class BookingCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setDefaultSort(['date'=>'ASC', 'hours' => 'ASC']);
+            ->setDefaultSort(['date'=>'ASC', 'hour' => 'ASC']);
     }
 }

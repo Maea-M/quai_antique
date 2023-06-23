@@ -28,8 +28,8 @@ class BookingFormType extends AbstractType
             'label' => false, 
             'widget'=>'choice', 
             'placeholder'=>['hour'=>'Heure', 'minute'=>'Minute'],
-            'hours'=>[12, 13, 19 , 20, 21],
-            'minutes'=>[00, 15, 30, 45]
+            'hour'=>[12, 13, 19 , 20, 21],
+            'minute'=>[00, 15, 30, 45]
         ]
         )
         ->add('allergy');
