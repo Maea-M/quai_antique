@@ -8,6 +8,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
@@ -29,8 +31,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+
+    #[Assert\Length(
+        min: 2,
+        max: 60,
+        minMessage: 'Le nom pour vous inscrire doit dépasser {{ limit }} caractères',
+        maxMessage: 'Le nom pour vous inscrire ne doit pas dépasser {{ limit }} caractères',
+    )]
+
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom de famille doit contenir uniquement des lettres")]
     #[ORM\Column(length: 60)]
+    
     private ?string $lastname = null;
+
+    #[Assert\Length(
+        min: 2,
+        max: 60,
+        minMessage: 'Le prénom pour vous inscrire doit dépasser {{ limit }} caractère',
+        maxMessage: 'Le prénom pour vous inscrire ne doit pas dépasser {{ limit }} caractères',
+    )]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le prénom doit contenir uniquement des lettres")]
 
     #[ORM\Column(length: 60)]
     private ?string $firstname = null;
