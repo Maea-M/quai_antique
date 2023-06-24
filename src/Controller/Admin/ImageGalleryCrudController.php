@@ -21,7 +21,7 @@ class ImageGalleryCrudController extends AbstractCrudController
     {
         return [
             /*IdField::new('id'),*/
-            TextField::new('title'),
+            TextField::new('title', 'titre'),
             ImageField::new('image')
                 ->setBasePath('upload')
                 ->setUploadDir('public/upload')

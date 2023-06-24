@@ -21,8 +21,8 @@ class FormulaCrudController extends AbstractCrudController
     {
         return [
             //IdField::new('id'),
-            TextField::new('title'),
-            NumberField::new('price'),
+            TextField::new('title', 'titre'),
+            NumberField::new('price', 'prix'),
             TextEditorField::new('description'),
         ];
     }
