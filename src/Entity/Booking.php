@@ -18,10 +18,10 @@ class Booking
     #[Assert\Length( 
         min: 2,
         max: 60,
-        minMessage: 'Le nom de la réservation doit dépasser {{ limit }} caractères',
+        minMessage: 'Le nom de la réservation doit contenir au moins {{ limit }} caractères',
         maxMessage: 'Le nom de la réservation ne doit pas dépasser {{ limit }} caractères',
     )]
-    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom de la réservation ne peut contenir uniquement des lettres")]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom de la réservation doit être composée de lettre")]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
