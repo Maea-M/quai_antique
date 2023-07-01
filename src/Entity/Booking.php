@@ -13,7 +13,17 @@ class Booking
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id = null; 
+
+    #[Assert\Length( 
+        min: 2,
+        max: 60,
+        minMessage: 'Le nom de la réservation doit dépasser {{ limit }} caractères',
+        maxMessage: 'Le nom de la réservation ne doit pas dépasser {{ limit }} caractères',
+    )]
+    #[Assert\Regex(pattern: "/^[a-zA-ZÀ-ÿ -]+$/", message: "Le nom de la réservation ne peut contenir uniquement des lettres")]
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
 
     #[Assert\Range(
         min: 1,
@@ -21,24 +31,35 @@ class Booking
         notInRangeMessage: 'Vous devez au minimum être {{ min }} et {{ max }} au maximum pour la réservation',
     )]
     #[ORM\Column]
-    private ?int $number_guest = null;
+    private ?int $number_guest = null; 
 
-    #[Assert\GreaterThan("now", message: "Vous avez choisi une date dans le passé.")]
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\GreaterThan("now", message: "Votre réservation ne peut pas être inférieure à la date d'aujourd'hui")]
+    #[Assert\LessThan("2025-01-01", message:"La date de réservation ne peut pas être après le 1er janvier 2025")]
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $hour = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $allergy = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     public function getNumberGuest(): ?int
@@ -48,7 +69,7 @@ class Booking
 
     public function setNumberGuest(int $number_guest): self
     {
-        $this->number_guest = $number_guest;
+        $this->$number_guest= $number_guest;
 
         return $this;
     }
@@ -82,22 +103,11 @@ class Booking
         return $this->allergy;
     }
 
-    public function setAllergy(?string $allergy): self
+    public function setAllergy(string $allergy): self
     {
         $this->allergy = $allergy;
 
         return $this;
     }
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
 }
