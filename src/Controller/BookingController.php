@@ -26,7 +26,7 @@ class BookingController extends AbstractController
     public function booking(Request $request, BookingRepository $repo): Response
     {
         $booking = new Booking();   
-        $bookingForm = $this->createForm(BookingType::class, $booking);
+        $bookingForm = $this->createForm(BookingFormType::class, $booking);
         $bookingForm->handleRequest($request); 
     
         if ($bookingForm ->isSubmitted() && $bookingForm->isValid()) {
