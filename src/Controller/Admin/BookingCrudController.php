@@ -23,7 +23,7 @@ class BookingCrudController extends AbstractCrudController
         return [
             //IdField::new('id'),
             TextField::new('name', 'nom'),
-            IntegerField::new('number_guest', 'nombre d\'invités'),
+            IntegerField::new('guest', 'nombre d\'invités'),
             DateField::new('date'),
             TimeField::new('hour', 'heure'),
             TextField::new('allergy', 'allergie')

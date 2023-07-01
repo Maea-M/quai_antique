@@ -31,7 +31,7 @@ class BookingController extends AbstractController
     
         if ($bookingForm ->isSubmitted() && $bookingForm->isValid()) {
             $booking->getName();
-            $booking->getNumberGuest();
+            $booking->getGuest();
             $booking->getDate();
             $booking->getHour();
             $booking->getAllergy();

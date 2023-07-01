@@ -31,7 +31,7 @@ class Booking
         notInRangeMessage: 'Vous devez au minimum être {{ min }} et {{ max }} au maximum pour la réservation',
     )]
     #[ORM\Column]
-    private ?int $number_guest = null; 
+    private ?int $guest = null; 
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Assert\GreaterThan("now", message: "Votre réservation ne peut pas être inférieure à la date d'aujourd'hui")]
@@ -97,14 +97,14 @@ class Booking
         return $this;
     }
 
-	public function getNumber_guest(): ?int {
-		return $this->number_guest;
+	public function getGuest(): ?int {
+		return $this->guest;
 	}
 	
-	public function setNumber_guest(?int $number_guest): self
+	public function setGuest(?int $guest): self
     
     {
-		$this->number_guest = $number_guest;
+		$this->guest = $guest;
 		return $this;
 	}
 }
