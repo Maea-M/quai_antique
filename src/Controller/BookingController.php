@@ -23,21 +23,24 @@ class BookingController extends AbstractController
      * @param \App\Repository\BookingRepository $bookingRepository
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function booking(Request $request, EntityManagerInterface $entityManager): Response
+    public function booking(Request $request, BookingRepository $repo): Response
     {
         $booking = new Booking();   
-        $bookingForm = $this->createForm(BookingFormType::class, $booking);
+        $bookingForm = $this->createForm(BookingType::class, $booking);
         $bookingForm->handleRequest($request); 
     
         if ($bookingForm ->isSubmitted() && $bookingForm->isValid()) {
-            $booking->getName();
-            $booking->getGuest();
-            $booking->getDate();
-            $booking->getHour();
-            $booking->getAllergy();
+            //$booking->getName();
+            //$booking->getGuest();
+            //$booking->getDate();
+            //$booking->getHour();
+            //$booking->getAllergy();
 
-            $entityManager->persist($booking);
-            $entityManager->flush();
+            //$entityManager->persist($booking);
+            //$entityManager->flush();
+
+            $repo->save($booking, true);
+            $this->addFlash('success', 'La réservation a bien été ajoutée.');
 
             return $this->redirectToRoute('bookingvalid');
 
