@@ -40,8 +40,7 @@ class Booking
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $hour = null;
 
-    
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $allergy = null;
 
     public function getId(): ?int
