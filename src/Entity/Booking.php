@@ -97,19 +97,13 @@ class Booking
         return $this;
     }
 
-
-	/**
-	 * @return 
-	 */
-	public function getNumberguest(): ?int {
+	public function getNumber_guest(): ?int {
 		return $this->number_guest;
 	}
 	
-	/**
-	 * @param  $number_guest 
-	 * @return self
-	 */
-	public function setNumberguest(?int $number_guest): self {
+	public function setNumber_guest(?int $number_guest): self
+    
+    {
 		$this->number_guest = $number_guest;
 		return $this;
 	}
