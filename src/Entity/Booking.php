@@ -60,17 +60,6 @@ class Booking
         return $this;
     }
 
-    public function getNumberGuest(): ?int
-    {
-        return $this->number_guest;
-    }
-
-    public function setNumberGuest(int $number_guest): self
-    {
-        $this->$number_guest= $number_guest;
-
-        return $this;
-    }
 
     public function getDate(): ?\DateTimeInterface
     {
@@ -108,4 +97,20 @@ class Booking
         return $this;
     }
 
+
+	/**
+	 * @return 
+	 */
+	public function getNumberguest(): ?int {
+		return $this->number_guest;
+	}
+	
+	/**
+	 * @param  $number_guest 
+	 * @return self
+	 */
+	public function setNumberguest(?int $number_guest): self {
+		$this->number_guest = $number_guest;
+		return $this;
+	}
 }
