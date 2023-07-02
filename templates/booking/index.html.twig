@@ -9,11 +9,11 @@
     <div class="container center">
     {{ form_start(bookingForm) }}
 
-        {{ form_row(bookingForm.name, { label: 'Nom de la réservation' }) }}
         {{ form_row(bookingForm.guest, { label: 'Nombre d\'invités' }) }}
         {{ form_row(bookingForm.date, { label: 'Date' }) }}
         {{ form_row(bookingForm.hour, { label: 'Heure d\'arrivée' }) }}
         {{ form_row(bookingForm.allergy, {label: 'Précisez si il y a des allergies et lesquelles :' }) }} 
+        {{ form_row(bookingForm.name, { label: 'Nom de la réservation' }) }}
 
         <button type="submit" class="btn btn-info mt-2 mb-5">Réserver une table</button>   
     
