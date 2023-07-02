@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Booking;
-use Doctrine\DBAL\Types\FloatType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,12 +16,7 @@ class BookingFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        // rajouter une ligne pour le nom de la résevation à mapper dans la bdd, voir l'entité
-        ->add('name')
-        ->add('guest', IntegerType::class, [
-            'attr' => ['min' => 1, 'max' => 15],
-        ]
-        )
+        ->add('guest')
         ->add('date')
         ->add('hour',  TimeType::class,  [
             'label' => false, 
@@ -32,7 +26,9 @@ class BookingFormType extends AbstractType
             'minutes'=>[00, 15, 30, 45]
         ]
         )
-        ->add('allergy');
+        ->add('allergy')
+        ->add('name');
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void
