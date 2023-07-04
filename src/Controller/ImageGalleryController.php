@@ -2,13 +2,10 @@
 
 namespace App\Controller;
 
-use App\Entity\ImageGallery;
-
 use App\Repository\ImageGalleryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\ImageGalleyRepository;
 
 class ImageGalleryController extends AbstractController
 {
@@ -16,9 +13,8 @@ class ImageGalleryController extends AbstractController
 
     public function index(ImageGalleryRepository $imageGalleryRepository): Response
     {
-        $image = $imageGalleryRepository->findBy([], ['id' => 'asc']);
         return $this->render('image_gallery/index.html.twig', [
-            'image'=> $image,
+            'image'=> $imageGalleryRepository->findBy([])
         ]);
     }
 }
